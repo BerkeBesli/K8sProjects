@@ -1,0 +1,4 @@
+microservice:         #general service details
+  name: grade-submission-api
+  namespace: grade-submission
+  replicas: 2

@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gradesub
+  labels:   #farklı labellar atanarak servis daha da özelleştirilebilir
+    app.kubernetes.io/name: gradesubmission
+    app.kubernetes.io/component: frontend      
+    app.kubernetes.io/instance: gradesub
+    #bu şekilde ihtiyaca göre sorgular ile bulmak/seçim yapmak kolaylaşır
+    #en geniş kapsamlısından, spesifiğe doğru labellar yazmak iyidir
+spec:
+  containers:
+  - name: gradesub
+    image: rslim087/kubernetes-course-grade-submission-portal
+    resources:
+      requests: 
+        memory: "128Mi"  #Memory sınırlı bir kaynaktır
+        cpu: "200m"      #CPU kullanımı ile hesaplama/işlem hızı ayarlanabilir
+      limits:  
+        memory: "128Mi"
+    ports:
+      - containerPort: 5001
+
+#requests ile gerekli olan minimum kaynak ihtiyacı belirtlir
+#limits ile maximum kullanılabilecek kaynak belirtilir
+
+#Memoryi aşacak şekilde CPU kullanılırsa, memory çoğaltılamadığı için,
+#hafızanın aşılması durumunda containerlar silinebilir. Bu durumdan
+#kaçınmak için limitler önemlidir. Kullanılmayan CPUlar işlem hızını
+#arttırdığı için CPUlara limit koymak gerekli değildir. Eğer başka bir
+#uygulama CPU gerektiriyorsa, request kadar CPU kullanılır ve sorun çıkmaz
+  - name: gradesubhealth
+    image: rslim087/kubernetes-course-grade-submission-portal-health-checker
+    resources:
+      requests: 
+        memory: "128Mi"  
+        cpu: "200m"      
+      limits:  
+        memory: "128Mi"
+  

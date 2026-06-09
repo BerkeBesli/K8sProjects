@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gradeservice2
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/instance: grademission
+  ports:
+  - port: 3000
+    targetPort: 3000

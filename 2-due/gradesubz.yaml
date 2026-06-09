@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gradesubz
+  labels:   
+    app.kubernetes.io/name: gradesubmission
+    app.kubernetes.io/component: frontend      
+    app.kubernetes.io/instance: gradesub
+    
+spec:
+  containers:
+  - name: gradesubz
+    image: rslim087/kubernetes-course-grade-submission-portal
+    env:
+    - name: GRADE_SERVICE_HOST  #bazı uygulamalar environment variable isteğinde bulunur
+      value: gradeservice2
+            #bu isteğe karşılık value kısmında verilir
+    resources:
+      requests: 
+        memory: "128Mi"  
+        cpu: "200m"      
+      limits:  
+        memory: "128Mi"
+    ports:
+      - containerPort: 5001
+

@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: grademission
+  namespace: grades    #podun oluşturulacağı namespace belirtilir
+  labels:
+    app.kubernetes.io/name: gradesubmission
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/instance: grademission
+spec:
+  containers:
+  - name: grademission
+    image: rslim087/kubernetes-course-grade-submission-api:stateless-v4
+    resources:
+      requests:
+        memory: "128Mi"
+        cpu: "128m"
+      limits: 
+        memory: "128Mi"
+    ports:
+      - containerPort: 3000
+  
+    
