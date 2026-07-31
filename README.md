@@ -1,4 +1,4 @@
-<h1>🚀 Kubernetes: From Zero To Cloud - Kurs Uygulamaları ve Ödevler</h1>
+<h1>🚀 Kubernetes: From Zero To Cloud - Kurs Uygulamaları</h1>
 
 <p>Bu depo, Rayan Slim tarafından hazırlanan <strong>"Kubernetes: From Zero To Cloud"</strong> kursu boyunca tamamladığım ödevleri, pratik uygulamaları ve YAML yapılandırma dosyalarını içermektedir.</p>
 
