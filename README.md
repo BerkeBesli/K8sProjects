@@ -31,7 +31,7 @@
     <li>⌨️ <a href="https://kubernetes.io/docs/tasks/tools/" target="_blank">kubectl</a> komut satırı aracı</li>
 </ul>
 
-<h3>🚀 Adımlar</h3>
+<h3>📂 Adımlar</h3>
 <ol>
     <li>
         <strong>📥 Depoyu Klonlayın:</strong>
@@ -39,24 +39,24 @@
 cd REPO_ADIN</code></pre>
     </li>
     <li>
-        <strong>📂 İlgili Bölüme Gidin:</strong>
+        <strong> İlgili Bölüme Gidin:</strong>
         <p>İncelemek veya çalıştırmak istediğiniz konunun klasörüne geçiş yapın (Örn: <code>01-pods</code>).</p>
 <pre><code>cd 01-pods</code></pre>
     </li>
     <li>
-        <strong>⚡ Konfigürasyonu Uygulayın:</strong>
+        <strong> Konfigürasyonu Uygulayın:</strong>
         <p>YAML dosyasını lokal Kubernetes cluster'ınıza dağıtmak için <code>kubectl apply</code> komutunu kullanın.</p>
 <pre><code>kubectl apply -f &lt;dosya-adi&gt;.yaml</code></pre>
     </li>
     <li>
-        <strong>🔍 Durumu Kontrol Edin:</strong>
+        <strong> Durumu Kontrol Edin:</strong>
         <p>Kaynakların başarıyla oluşturulduğunu ve düzgün çalıştığını doğrulamak için aşağıdaki komutları kullanabilirsiniz:</p>
 <pre><code>kubectl get pods
 kubectl get services
 kubectl get deployments</code></pre>
     </li>
     <li>
-        <strong>🧹 Ortamı Temizleme:</strong>
+        <strong> Ortamı Temizleme:</strong>
         <p>İncelemeniz bittikten sonra sistem kaynaklarını serbest bırakmak için yapılandırmayı cluster'dan kaldırın:</p>
 <pre><code>kubectl delete -f &lt;dosya-adi&gt;.yaml</code></pre>
     </li>
